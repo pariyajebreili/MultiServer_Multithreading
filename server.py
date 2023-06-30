@@ -42,6 +42,9 @@ def handle_client(client_socket, client_addr):
 
     # Loop to connect 4 times
     for i in range(4):
+        # Measure the time spent in the queue
+        start_time = time.monotonic()
+        
         # Receive messages from the client
         connected = True
         while connected:
@@ -65,6 +68,11 @@ def handle_client(client_socket, client_addr):
                 ColorPrints.print_in_red(f"[DISCONNECTED] {client_addr} disconnected.")
             else:
                 logging.info(f"[{client_addr}] {msg}")
+
+        # Measure the time spent in the queue
+        end_time = time.monotonic()
+        time_in_queue = end_time - start_time
+        logging.info(f"[TIME IN QUEUE] {client_addr} spent {time_in_queue:.3f} seconds in the queue.")
 
         # Remove the client from the queue
         try:
@@ -96,7 +104,6 @@ def handle_client(client_socket, client_addr):
         time.sleep(1)
 
     logging.info(f"[FINISHED] {client_addr} finished connecting.")
-
 
 def check_overflow_queue():
     while True:
