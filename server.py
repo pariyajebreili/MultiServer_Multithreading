@@ -9,8 +9,8 @@ from colorprints import ColorPrints
 # Server configuration
 SERVER_ADDRESS = ('localhost', 8000)
 MAX_CONNECTIONS = 5
-MAX_QUEUE_SIZE = 20
-OVERFLOW_QUEUE_SIZE = 20
+MAX_QUEUE_SIZE = 5
+OVERFLOW_QUEUE_SIZE = 50
 IDLE_TIMEOUT = 3  # Define the idle timeout in seconds
 OVERFLOW_CHECK_INTERVAL = 3  # Define the overflow check interval in seconds
 
