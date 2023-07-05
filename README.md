@@ -7,7 +7,7 @@ This project use socket for communication.
 # Installation
 1.
 ```bash
-git clone https://github.com/pariyajebreili/
+git clone https://github.com/pariyajebreili/MultiServer_Multithreading.git
 ```
 2.
 ```bash
